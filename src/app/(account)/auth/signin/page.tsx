@@ -7,13 +7,21 @@ import FormResult from '@/components/auth/form-result';
 import { login } from '@/app/actions/login';
 import { useSearchParams } from 'next/navigation';
 import { FormState } from '@/app/utils';
+import { useFormState } from '@/app/hooks/use-form-state';
 
 const SignIn = () => {
-  const [state, setState] = useState(FormState.INITIAL);
+  const [state, setState] = useFormState();
   const [message, setMessage] = useState('');
 
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl');
+
+  useEffect(() => {
+    if (searchParams.get('error') === 'OAuthAccountNotLinked') {
+      setState(FormState.ERROR);
+      setMessage('Email already in use with different provider!');
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,13 +47,6 @@ const SignIn = () => {
       setMessage('Something went wrong.');
     }
   };
-
-  useEffect(() => {
-    if (searchParams.get('error') === 'OAuthAccountNotLinked') {
-      setState(FormState.ERROR);
-      setMessage('Email already in use with different provider!');
-    }
-  }, [searchParams]);
 
   return (
     <article className='flex flex-col p-8 rounded-md w-[500px] bg-card'>

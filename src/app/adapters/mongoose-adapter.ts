@@ -77,7 +77,9 @@ export function MongooseAdapter(): Adapter {
     async createUser({ id, email, emailVerified }) {
       await MongooseConnection.connect();
 
-      const userId = id ?? randomUUID();
+      console.log('Creating user', id, email, emailVerified);
+
+      const userId = randomUUID();
 
       const userCreator = new UserCreator(new MongoUserRepository());
       await userCreator.run({

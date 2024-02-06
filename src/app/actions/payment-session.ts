@@ -33,7 +33,7 @@ export const paymentSession = async (plan: PlanEnum, email?: string): Promise<vo
 
   const paymentSession = await stripe.billingPortal.sessions.create({
     customer: customer.data[0].id,
-    return_url: `${headers().get('origin')}/dashboard`,
+    return_url: `${headers().get('origin')}/saas-product`,
   });
 
   redirect(paymentSession.url);

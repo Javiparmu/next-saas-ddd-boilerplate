@@ -1,8 +1,11 @@
+import { Dashboard } from '@/components/dashboard'
 import React from 'react'
 
 const SaasPage = () => {
   return (
-    <div>SaasPage</div>
+    <main>
+      <Dashboard />
+    </main>
   )
 }
 
