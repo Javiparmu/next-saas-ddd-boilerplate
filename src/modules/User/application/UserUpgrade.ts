@@ -2,9 +2,6 @@ import { SubscriptionId } from '@/modules/Subscription/domain/value-object/Subsc
 import { UserRepository } from '../domain/UserRepository';
 import { UserSubscription } from '../domain/UserSubscription';
 import { UserId } from '../domain/value-object/UserId';
-import { UserRequestCount } from '../domain/value-object/UserRequestCount';
-import { UserRequestLimit } from '../domain/value-object/UserRequestLimit';
-import { UserRequestReset } from '../domain/value-object/UserRequestReset';
 import { StripeCurrentPeriodEnd } from '../domain/value-object/stripe/StripeCurrentPeriodEnd';
 import { StripePriceId } from '../domain/value-object/stripe/StripePriceid';
 
@@ -29,9 +26,6 @@ export class UserUpgrade {
       userId: new UserId(document.userId),
       stripeCurrentPeriodEnd: new StripeCurrentPeriodEnd(document.stripeCurrentPeriodEnd),
       stripePriceId: new StripePriceId(document.stripePriceId),
-      requestCount: new UserRequestCount(document.requestCount),
-      requestLimit: new UserRequestLimit(document.requestLimit),
-      requestReset: new UserRequestReset(document.requestReset),
     });
 
     await this.repository.subscribe(userSubscription);

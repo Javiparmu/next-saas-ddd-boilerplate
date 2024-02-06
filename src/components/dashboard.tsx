@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu"
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
+import { SVGAttributes } from "react"
 
 export function Dashboard() {
   return (
@@ -153,7 +154,7 @@ export function Dashboard() {
 }
 
 
-function CalendarIcon(props) {
+function CalendarIcon(props: SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -176,7 +177,7 @@ function CalendarIcon(props) {
 }
 
 
-function BellIcon(props) {
+function BellIcon(props: SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -197,7 +198,7 @@ function BellIcon(props) {
 }
 
 
-function HomeIcon(props) {
+function HomeIcon(props: SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -218,7 +219,7 @@ function HomeIcon(props) {
 }
 
 
-function UsersIcon(props) {
+function UsersIcon(props: SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -241,7 +242,7 @@ function UsersIcon(props) {
 }
 
 
-function SearchIcon(props) {
+function SearchIcon(props: SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       {...props}
