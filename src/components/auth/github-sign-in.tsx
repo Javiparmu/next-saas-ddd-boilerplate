@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import styles from '@/app/styles/Auth.module.css';
 import { signIn } from 'next-auth/react';
 
 const GithubSignIn = () => {
@@ -10,8 +9,8 @@ const GithubSignIn = () => {
   };
 
   return (
-    <button title="Github sign in" onClick={handleGithubAuth} className={styles.githubAuthButton}>
-      <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <button title="Github sign in" onClick={handleGithubAuth} className='flex items-center justify-center w-full h-14 bg-primary mt-4 p-4 gap-4 rounded-lg text-gray-100 hover:bg-primary/90 transition'>
+      <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className='h-8'>
         <g strokeWidth="0" id="SVGRepo_bgCarrier"></g>
         <g strokeLinejoin="round" strokeLinecap="round" id="SVGRepo_tracerCarrier"></g>
         <g id="SVGRepo_iconCarrier">

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import styles from '@/app/styles/Auth.module.css';
 import { signIn } from 'next-auth/react';
 
 const GoogleSignIn = () => {
@@ -10,8 +9,8 @@ const GoogleSignIn = () => {
   };
 
   return (
-    <button title="Google sign in" onClick={handleGoogleAuth} className={styles.googleAuthButton}>
-      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262">
+    <button title="Google sign in" onClick={handleGoogleAuth} className='flex items-center justify-center w-full h-14 bg-primary p-4 gap-4 rounded-lg text-gray-100 hover:bg-primary/90 transition'>
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262" className='h-6'>
         <path
           fill="#4285F4"
           d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"

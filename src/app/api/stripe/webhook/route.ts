@@ -3,7 +3,7 @@ import { createInvoiceAdapter } from '@/app/adapters/invoice-adapter';
 import { createSubscriptionAdapter } from '@/app/adapters/subscription-adapter';
 import { createSubscriptionDeletedAdapter } from '@/app/adapters/subscription-deleted-adapter';
 import { sendRefundEmail, sendSubscriptionUpdatedEmail, stripe } from '@/lib';
-import { getPlanFromId } from '@/utils';
+import { getPlanFromId } from '@/app/utils';
 import { CustomerCreator } from '@/modules/Customer/application/CustomerCreator';
 import { CustomerDeleter } from '@/modules/Customer/application/CustomerDeleter';
 import { CustomerFinder } from '@/modules/Customer/application/CustomerFinder';

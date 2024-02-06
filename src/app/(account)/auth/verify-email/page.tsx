@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import FormResult from '@/components/auth/form-result';
 import { verifyUser } from '@/app/actions/verify-user';
-import { FormState } from '@/utils';
+import { FormState } from '@/app/utils';
 
 const SignIn = () => {
   const [state, setState] = useState(FormState.INITIAL);

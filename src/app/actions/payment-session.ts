@@ -2,7 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import { auth, stripe } from '@/lib';
-import { PlanEnum, getPlanId, getPlanPaymentUrl } from '@/utils';
+import { PlanEnum, getPlanId, getPlanPaymentUrl } from '@/app/utils';
 import { headers } from 'next/headers';
 
 export const paymentSession = async (plan: PlanEnum, email?: string): Promise<void> => {

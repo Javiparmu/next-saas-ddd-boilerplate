@@ -1,8 +1,11 @@
+import { HeroSection } from '@/components/hero-section'
 import React from 'react'
 
 const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <main>
+      <HeroSection />
+    </main>
   )
 }
 

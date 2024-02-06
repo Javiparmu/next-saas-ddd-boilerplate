@@ -6,7 +6,7 @@ import GithubSignIn from '@/components/auth/github-sign-in';
 import FormResult from '@/components/auth/form-result';
 import { login } from '@/app/actions/login';
 import { useSearchParams } from 'next/navigation';
-import { FormState } from '@/utils';
+import { FormState } from '@/app/utils';
 
 const SignIn = () => {
   const [state, setState] = useState(FormState.INITIAL);
@@ -48,23 +48,23 @@ const SignIn = () => {
   }, [searchParams]);
 
   return (
-    <article>
-      <h1>Sign in to your account.</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <article className='flex flex-col p-8 rounded-md w-[500px] bg-card'>
+      <h1 className='text-2xl mb-8'>Sign in to your account.</h1>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-6 items-center w-full'>
+        <label className='flex flex-col w-full'>
           Email
-          <input type="email" id="email" color="black" required />
+          <input type="email" id="email" color="black" required className='h-12 p-2 border-[1px] border-gray-400 rounded-md' />
         </label>
-        <label>
+        <label className='flex flex-col w-full'>
           Password
-          <input minLength={8} type="password" id="password" color="black" required />
+          <input minLength={8} type="password" id="password" color="black" required className='h-12 w-full p-2 border-[1px] border-gray-400 rounded-md' />
         </label>
         <FormResult message={message} state={state} />
-        <button disabled={state === FormState.LOADING} title="Sign in" type="submit">
+        <button disabled={state === FormState.LOADING} title="Sign in" type="submit" className='h-14 w-full rounded-lg bg-primary text-gray-100 hover:bg-primary/90 transition'>
           Sign in
         </button>
       </form>
-      <div />
+      <div className='h-[1px] bg-primary my-8'/>
       <GoogleSignIn />
       <GithubSignIn />
     </article>

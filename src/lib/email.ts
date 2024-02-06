@@ -1,6 +1,6 @@
-import { registrationEmailTemplate, subscriptionEmailTemplate, subscriptionUpdatedEmailTemplate } from '@/utils/email-templates';
-import { PlanEnum } from '@/utils/enums';
-import { EmailResponse } from '@/utils/interfaces';
+import { registrationEmailTemplate, subscriptionEmailTemplate, subscriptionUpdatedEmailTemplate } from '@/app/utils/email-templates';
+import { PlanEnum } from '@/app/utils/enums';
+import { EmailResponse } from '@/app/utils/interfaces';
 import { Resend } from 'resend';
 
 const NO_REPLY_EMAIL = 'noreply@brain-stack.com';
